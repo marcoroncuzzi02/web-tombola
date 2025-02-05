@@ -28,16 +28,19 @@ function random() {
 btn.addEventListener('click', function(){
     random()
     numeroEstratto.innerHTML = numeroRandom
-    arrayEstratti.push(numeroRandom)
+    // arrayEstratti.push(numeroRandom)
     console.log(numeroRandom)
+    let casellaRossa = document.querySelectorAll(`.casella-${numeroRandom}`)
+    casellaRossa.forEach(element => {
+        element.className = element.classList + " red"
+    });
+    console.log(casellaRossa)
 })
 
-let casellaRossa = document.querySelectorAll(`.casella-${numeroRandom}`)
 
-console.log(casellaRossa)
 
-casellaRossa.forEach(element => {
-    element.className = element.classList + "red"
-});
+
+
+
 
 // const numeriRossi = arrayEstratti.map
